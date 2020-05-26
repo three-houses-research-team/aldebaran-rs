@@ -1,0 +1,23 @@
+[package]
+name = "aldebaran"
+version = "0.2.0"
+authors = ["Raytwo <raytwost@gmail.com>", "kolakcc <kolakcc@gmail.com>"]
+edition = "2018"
+
+[package.metadata.skyline]
+titleid = "010055D009F78000"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+skyline = { git = "https://github.com/ultimate-research/skyline-rs" }
+ktgl = { git = "https://github.com/Raytwo/ktgl-skyline.git" }
+lazy_static = "1.4.0"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
