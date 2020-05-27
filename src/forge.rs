@@ -1,4 +1,3 @@
-use crate::bt::dump_trace;
 use ktgl::feth::v120::linkdata::{ get_uncompressed_size };
 use ktgl::feth::v120::memory::kt_aligned_malloc;
 use lazy_static::lazy_static;
@@ -74,7 +73,6 @@ pub fn hook_load_with_entry_id(
     unk2: u64,
     unk3: u64,
 ) -> *const c_void {
-    dump_trace();
     match forge!().try_load(entryid, seek, size) {
         None => {
             println!("[Forge] EntryID {} loaded.", entryid);

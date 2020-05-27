@@ -2,9 +2,7 @@
 #![feature(asm)]
 
 use skyline::{hook, install_hook};
-mod alloc;
 mod forge;
-mod bt;
 
 // Required to prevent Skyline from crashing the game
 #[hook(offset = 0xAFCCF0)]
@@ -27,7 +25,6 @@ pub unsafe fn main() {
 
     // Replace the version string on the title screen
     install_hook!(get_version_string);
-
 
     // Intercept EntryId loadings to replace files on the fly
     forge::init_forge();
